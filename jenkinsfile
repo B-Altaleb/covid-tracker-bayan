@@ -2,21 +2,24 @@ pipeline {
     agent any
 
     stages {
-        stage('checkout') {
+        stage('Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/B-Altaleb/covid-tracker-bayan.git'
             }
         }
-
-        stage('build') {
+        
+        stage('Build') {
             steps {
-                sh 'mvn clean package' // Replace with your build commands or scripts
+                sh 'docker build -t bayanaltaleb/covidtracker-bayan:6.0 .' 
             }
         }
-
-        stage('push') {
+        
+        stage('Push') {
             steps {
-                sh 'docker push your-image:tag' // Replace with your push commands or scripts
+                withCredentials([usernamePassword(credentialsId: 'bayan-docker-credentials', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
+                    sh 'echo $DOCKER_PASSWORD | docker login --username $DOCKER_USERNAME --password-stdin' // 
+                    sh 'docker push bayanaltaleb/covidtracker-bayan:6.0' 
+                }
             }
         }
     }
