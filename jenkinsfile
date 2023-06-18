@@ -7,6 +7,17 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/B-Altaleb/covid-tracker-bayan.git'
             }
         }
+
+        stage('build') {
+            steps {
+                sh 'mvn clean package' // Replace with your build commands or scripts
+            }
+        }
+
+        stage('push') {
+            steps {
+                sh 'docker push your-image:tag' // Replace with your push commands or scripts
+            }
+        }
     }
 }
-
