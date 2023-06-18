@@ -1,8 +1,12 @@
 {
-  "name": "bayan-app",
+  "name": "Bayan-app",
   "version": "1.0.0",
-  "description": "testing a covid tracker",
+  "description": "This program views a COVID-19 tracker",
+  "main": "script.js",
   "scripts": {
-    "start": "script.js"
+    "start": "node script.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
