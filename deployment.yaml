@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: bayan-k8-container
-          image: bayanaltaleb/covidtracker-bayan:6.0
+          image: hello-world
           ports:
             - containerPort: 3000
