@@ -30,11 +30,11 @@ pipeline {
             }
         }
         
-        stage('Deploy') {
-            steps {
-                // Add your deployment commands or scripts here
-                sh 'kubectl apply -f deployment.yaml' // Example command
-            }
-        }
+//        stage('Deploy') {
+//            steps {
+//                // Add your deployment commands or scripts here
+//                sh 'kubectl apply -f deployment.yaml' // Example command
+//            }
+//        }
     }
 }
