@@ -2,4 +2,4 @@
 
 API: https://corona.lmao.ninja/v2/countries/:country
 
-Updating
+Updating once more
