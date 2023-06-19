@@ -16,7 +16,6 @@ pipeline {
         
         stage('Test') {
             steps {
-                // Add your test commands or scripts here
                 sh 'docker run bayanaltaleb/covidtracker-bayan:6.0 npm test' 
             }
         }
@@ -32,8 +31,7 @@ pipeline {
         
 //        stage('Deploy') {
 //            steps {
-//                // Add your deployment commands or scripts here
-//                sh 'kubectl apply -f deployment.yaml' // Example command
+//                sh 'kubectl apply -f deployment.yaml'
 //            }
 //        }
     }
