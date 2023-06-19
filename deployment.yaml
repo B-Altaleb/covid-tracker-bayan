@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bayan-k8-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: bayan-k8-app
+  template:
+    metadata:
+      labels:
+        app: bayan-k8-app
+    spec:
+      containers:
+        - name: bayan-k8-container
+          image: bayanaltaleb/covidtracker-bayan:6.0
+          ports:
+            - containerPort: 3000
