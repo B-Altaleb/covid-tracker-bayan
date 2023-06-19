@@ -13,7 +13,12 @@ pipeline {
                 sh 'docker build -t bayanaltaleb/covidtracker-bayan:6.0 .' 
             }
         }
-        
+        stage('Test') {
+            steps {
+                // Add your test commands or scripts here
+                sh 'docker run bayanaltaleb/covidtracker-bayan:6.0 npm test' 
+            }
+        }        
         stage('Push') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'bayan-docker-credentials', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
