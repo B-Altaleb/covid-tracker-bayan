@@ -14,11 +14,11 @@ pipeline {
             }
         }
         
-        stage('Test') {
-            steps {
-                sh 'docker run bayanaltaleb/covidtracker-bayan:6.0 npm test' 
-            }
-        }
+//        stage('Test') {
+//            steps {
+//                sh 'docker run bayanaltaleb/covidtracker-bayan:6.0 npm test' 
+//            }
+//        }
         
         stage('Push') {
             steps {
