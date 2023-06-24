@@ -29,6 +29,12 @@ pipeline {
             }
         }
         
+        stage('Deploy') {
+            steps {
+                sh 'docker run -d -p 3000:80 bayanaltaleb/covidtracker-bayan:6.0'
+            }
+        }
+
 //        stage('Deploy') {
 //            steps {
 //                sh 'kubectl apply -f deployment.yaml'
