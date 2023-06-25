@@ -16,4 +16,4 @@ spec:
         - name: covidtracker-bayan-container
           image: bayanaltaleb/covidtracker-bayan:6.0
           ports:
-            - containerPort: 4000
+            - containerPort: 80
