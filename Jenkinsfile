@@ -29,7 +29,7 @@ pipeline {
             }
         }
         
-        stage('Deploy') {
+        stage('Deploy to port 3000') {
             steps {
                 sh 'docker run -d -p 3000:80 bayanaltaleb/covidtracker-bayan:6.0'
             }
